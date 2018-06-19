@@ -10,26 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_19_031359) do
+ActiveRecord::Schema.define(version: 2018_06_19_151209) do
+
+  create_table "franchises", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "media", force: :cascade do |t|
     t.string "name"
+    t.string "type"
+    t.string "director_author"
+    t.text "snippet"
+    t.text "review"
+    t.integer "rating"
+    t.integer "franchise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "media_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "vote_numbers"
   end
 
 end
