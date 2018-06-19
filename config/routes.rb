@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-  resource :users
+  resources :users
+  resources :franchises
 #established a route to a user sign up page
 #TO DO:
 #Save user credentials/ give them a show page

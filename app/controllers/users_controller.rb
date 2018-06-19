@@ -4,15 +4,22 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def create #creates a new user
     @user = User.new(user_params).save
+  end
+
+  def new
+
+  end
+
+  def index 
+
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:email, :password)
   end
 
 end
