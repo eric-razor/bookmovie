@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  director: MyString
+  author: MyString
   snippet: MyText
   review: MyText
   rating: 1
 
 two:
   name: MyString
-  director: MyString
+  author: MyString
   snippet: MyText
   review: MyText
   rating: 1

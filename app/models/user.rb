@@ -1,4 +1,4 @@
 class User < ApplicationRecord
   has_many :votes
-  has_many :media, through: :votes
+  has_many :mediums, through: :votes
 end

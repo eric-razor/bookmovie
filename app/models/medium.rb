@@ -1,4 +1,5 @@
 class Medium < ApplicationRecord
-  has_many :user
-  has_many :vote, through: :users
+
+    belongs_to :franchise
+    has_many :votes, through: :users
 end
