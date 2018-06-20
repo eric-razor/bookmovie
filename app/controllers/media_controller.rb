@@ -8,6 +8,11 @@ class MediaController < ApplicationController
   def upvote
     @medium = Medium.find(params[:id])
     @medium.votes.create
-    # redirect_to 
+    @franchise = Franchise.find(params[:franchise_id])
+    render franchise_path(@franchise)
   end
+
+  # def find_franchise
+  #
+  # end
 end
