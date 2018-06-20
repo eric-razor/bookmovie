@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :franchises
+  # resources :media
+  resources :media do
+    member do
+      post 'upvote'
+    end
+  end
 #established a route to a user sign up page
 #TO DO:
 #Save user credentials/ give them a show page

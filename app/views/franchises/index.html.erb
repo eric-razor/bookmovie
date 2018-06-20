@@ -1,5 +1,6 @@
 <ul>
   <%@franchises.each do |franchise| %>
-  <li><%= franchise.name %></li>
+  <li><%= link_to franchise.name, franchise %></li>
   <%end%>
+
 </ul>

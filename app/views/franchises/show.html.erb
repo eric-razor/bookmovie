@@ -1,0 +1,8 @@
+<marquee><%= @franchise.name %></marquee>
+<!-- List all media in franchise-->
+<ul>
+  <% @franchise.media.each do |media|%>
+    <li><%= button_to '+1', upvote_medium_path(media), method: :post %>
+      <%= link_to media.name, media%></li>
+    <% end %>
+</ul>

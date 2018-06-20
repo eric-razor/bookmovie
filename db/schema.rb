@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_19_151209) do
+ActiveRecord::Schema.define(version: 2018_06_20_142337) do
 
   create_table "franchises", force: :cascade do |t|
     t.string "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_06_19_151209) do
 
   create_table "media", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "media_type"
     t.string "director_author"
     t.text "snippet"
     t.text "review"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 2018_06_19_151209) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "medium_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,3 +1,4 @@
 class Vote < ApplicationRecord
-  belongs_to :user, :medium
+  belongs_to :medium
+  belongs_to :user
 end
