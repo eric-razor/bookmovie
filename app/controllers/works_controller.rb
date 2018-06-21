@@ -7,7 +7,7 @@ class WorksController < ApplicationController
   end
 
   def upvote
-    byebug
+    #byebug
     #@work = work.find(params[:id])
     @work.liked_by User.first #votes.create
       redirect_to franchise_path(@work.franchise)

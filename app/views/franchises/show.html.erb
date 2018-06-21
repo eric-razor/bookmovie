@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8 offset-md-4">
 
-      <% @franchise.works.each do |work| %>
+      <% @franchise.works&.each do |work| %>
 
         <div class="well">
           <h2 style="text-align:center;"><%= work.name %></h2>
