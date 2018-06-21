@@ -1,7 +1,6 @@
 class MediaController < ApplicationController
-  # before_action :authenticate_user!
-  before_action :upvote, :downvote
-
+  before_action :set_medium, only: [:upvote, :downvote]
+  # before_action :upvote, :downvote
   def show
     @medium = Medium.find(params[:id])
     render :show
@@ -9,19 +8,19 @@ class MediaController < ApplicationController
 
   def upvote
     #@medium = Medium.find(params[:id])
-    @medium.upvote_from current_user #votes.create
-    redirect_to medium_path
-    # @franchise = Franchise.find(params[:franchise_id])
-    # render franchise_path(@franchise)
+    @medium.get_upvotes current_user #votes.create
+    redirect_to franchise_path
   end
 
   def downvote
-    @medium.downvote_from current_user #votes.create
-    redirect_to medium_path
-
+    @medium.get_downvotes current_user
+    redirect_to franchise_path
   end
 
-  # def find_franchise
-  #
-  # end
+  private
+  def set_medium
+    @medium = Medium.find(params[:id])
+  end
+
+
 end
