@@ -8,13 +8,13 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :franchises
-  resources :works do
-    member do
+  resources :franchises do
+    resources :works do
       post 'like' => 'works#upvote'
       post 'unlike' => 'works#downvote'
     end
   end
+
 #established a route to a user sign up page
 #TO DO:
 #Save user credentials/ give them a show page
