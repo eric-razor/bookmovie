@@ -9,9 +9,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :franchises
-
-  # resources :works
-
   resources :works do
     member do
       post 'like' => 'works#upvote'
