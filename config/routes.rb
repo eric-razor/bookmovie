@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # devise_for :users
-  # root 'application#home'
+  root 'franchises#index' #goes directly to franchises
   # get '/login' => 'sessions#new'
   # post '/login' => 'sessions#create'
   # post '/logout' => 'sessions#destroy'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :franchises do
-    resources :works do
+    resources :works do  #should be routed properly
       post 'like' => 'works#upvote'
       post 'unlike' => 'works#downvote'
     end
