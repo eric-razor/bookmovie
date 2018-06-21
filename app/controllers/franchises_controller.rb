@@ -11,16 +11,16 @@ class FranchisesController < ApplicationController
   end
 
   def upvote
-    #@medium = Medium.find(params[:id])
-    @medium.get_upvotes current_user #votes.create
-    redirect_to medium_path
+    #@work = work.find(params[:id])
+    @work.get_upvotes current_user #votes.create
+    redirect_to work_path
     # @franchise = Franchise.find(params[:franchise_id])
     # render franchise_path(@franchise)
   end
 
   def downvote
-    @medium.get_downvotes current_user #votes.create
-    redirect_to medium_path
+    @work.get_downvotes current_user #votes.create
+    redirect_to work_path
 
   end
   private

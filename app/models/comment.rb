@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  belongs_to :user, :medium
+  belongs_to :user, :work
 end

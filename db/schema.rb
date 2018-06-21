@@ -18,20 +18,8 @@ ActiveRecord::Schema.define(version: 2018_06_21_132303) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "media", force: :cascade do |t|
-    t.string "name"
-    t.string "media_type"
-    t.string "director_author"
-    t.text "snippet"
-    t.text "review"
-    t.integer "rating"
-    t.integer "franchise_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "submissions", force: :cascade do |t|
-    t.integer "medium_id"
+    t.integer "work_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,6 +44,18 @@ ActiveRecord::Schema.define(version: 2018_06_21_132303) do
     t.datetime "updated_at"
     t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string "name"
+    t.string "work_type"
+    t.string "director_author"
+    t.text "snippet"
+    t.text "review"
+    t.integer "rating"
+    t.integer "franchise_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,35 +1,21 @@
-<marquee><%= @franchise.name %></marquee>
-<!-- List all media in franchise-->
-<ul>
-  <!-- <li> button_to '+1', upvote_medium_path(media), method: :post  -->
-<!--  erb tags < % =  % >  don't work in HTML comments quotes-->
-<hr>
-  <% @franchise.media.each do |medium|%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-4">
 
-  <div class="col-sm-6 col-md-4">
+      <% @franchise.works.each do |work| %>
 
-    <div class="thumbnail thumb-box">
+        <div class="well">
+          <h2 style="text-align:center;"><%= work.name %></h2>
 
-      <h2 style="text-align:center;"><%= medium.name %></h2>
-
-      <div class="caption" style="text-align:center">
-        <%= link_to like_medium_path(medium), class: "like", method: :put do %>
-          <button type="button" class="btn btn-info" aria-label="Left Align">
-          <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-          <span class="badge"><%= medium.get_upvotes.size %></span>
-        </button>
-        <% end %>
-
-        <%= link_to like_medium_path(medium), class: "like", method: :put do %>
-          <button type="button" class="btn btn-info" aria-label="Left Align">
-          <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-          <span class="badge"><%= medium.get_downvotes.size %></span>
-        </button>
-        <% end %>
-
-      </div>
+          <div class="caption" style="text-align:center">
+            <a class="btn btn-info" aria-label="Left Align" >
+             <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+             <span class="badge"><%= work.get_upvotes.size %></span>
+           </a>
+          </div>
+        </div>
+        <%= button_to "like", like_work_path(work),  method: :post %>
+       <% end %>
     </div>
-      <%= link_to medium.name, medium%></li>
-
-    <% end %>
-</ul>
+  </div>
+</div>

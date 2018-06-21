@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     skip_before_action :logged_in?, only: [:create, :new]
+    helper_method :current_user
 
   def new
     render :new
@@ -17,6 +18,12 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
     # POST of the login
+  end
+
+  def current_user
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    else
   end
 
   def destroy

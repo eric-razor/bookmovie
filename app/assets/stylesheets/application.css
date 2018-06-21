@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+/* .collapse {
+  display: flex;
+} */
+
+
+.body {
+  padding-top: 40px;
+
+}
+
+
+.navbar-nav{
+  padding-bottom:30px;
+
+}

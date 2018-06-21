@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   resources :users
   resources :franchises
 
-  # resources :media
-  resources :media do
+  # resources :works
+
+  resources :works do
     member do
-      put 'like' => 'medium#upvote'
-      put 'unlike' => 'medium#downvote'
+      post 'like' => 'work#upvote'
+      post 'unlike' => 'work#downvote'
     end
   end
 #established a route to a user sign up page
