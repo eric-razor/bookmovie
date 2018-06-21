@@ -20,7 +20,7 @@
 </button>
 <% end %>
         </div>
-        <%= button_to "like", "/works/#{work.id}/like",  method: :post %>
+        <%= button_to "like", franchise_work_like_path(@franchise, work),  method: :put %>
        <% end %>
     </div>
   </div>

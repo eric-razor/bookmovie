@@ -22,6 +22,4 @@ class WorksController < ApplicationController
   def set_work
     @work = Work.find(params[:work_id])
   end
-
-
 end
