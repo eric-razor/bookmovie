@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   resources :works do
     member do
-      post 'like' => 'work#upvote'
-      post 'unlike' => 'work#downvote'
+      post 'like' => 'works#upvote'
+      post 'unlike' => 'works#downvote'
     end
   end
 #established a route to a user sign up page

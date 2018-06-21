@@ -13,8 +13,14 @@
              <span class="badge"><%= work.get_upvotes.size %></span>
            </a>
           </div>
+          <%= button_to unlike_work_path(work), class: "like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align">
+  <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+  <span class="badge"><%= work.get_downvotes.size %></span>
+</button>
+<% end %>
         </div>
-        <%= button_to "like", like_work_path(work),  method: :post %>
+        <%= button_to "like", "/works/#{work.id}/like",  method: :post %>
        <% end %>
     </div>
   </div>

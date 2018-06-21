@@ -10,12 +10,12 @@ class WorksController < ApplicationController
     byebug
     #@work = work.find(params[:id])
     @work.liked_by User.first #votes.create
-    redirect_to work_path(@work)
+      redirect_to franchise_path(@work.franchise)
   end
 
   def downvote
-    @work.get_downvotes current_user
-    redirect_to franchise_path
+    @work.downvote_from User.first
+    redirect_to franchise_path(@work.franchise)
   end
 
   private
