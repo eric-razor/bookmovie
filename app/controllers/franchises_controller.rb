@@ -5,9 +5,8 @@ class FranchisesController < ApplicationController
   end
 
   def show  #show page for the users profile
-
     @franchise = Franchise.find(params[:id])
-    # byebug
+    #byebug
   end
 
   private

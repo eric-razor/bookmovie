@@ -1,8 +1,16 @@
 <marquee><%= @franchise.name %></marquee>
 <!-- List all media in franchise-->
 <ul>
+  <!-- <li> button_to '+1', upvote_medium_path(media), method: :post  -->
+<!--  erb tags < % =  % >  don't work in HTML comments quotes-->
+
   <% @franchise.media.each do |media|%>
-    <li><%= button_to '+1', upvote_medium_path(media), method: :post %>
+
+
+    <li><button class="button">Click Me</button></li>
+
+
+
       <%= link_to media.name, media%></li>
     <% end %>
 </ul>

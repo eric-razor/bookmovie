@@ -5,15 +5,11 @@ class UsersController < ApplicationController
   end
 
   def create #creates a new user
-    @user = User.new(user_params).save
+    @user = User.create(user_params)
   end
 
   def new
-
-  end
-
-  def index 
-
+    @user = User.new(user_params)
   end
 
   private
