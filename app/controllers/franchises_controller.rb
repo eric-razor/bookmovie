@@ -2,6 +2,7 @@ class FranchisesController < ApplicationController
 
   def index
     @franchises = Franchise.all
+  
   end
 
   def show  #show page for the users profile

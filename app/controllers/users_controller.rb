@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  def new
+    @user = User.new
+
+  end
+
   def show  #show page for the users profile
     @user = User.find(params[:id])
   end
@@ -8,9 +13,6 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
   end
 
-  def new
-    @user = User.new(user_params)
-  end
 
   private
 

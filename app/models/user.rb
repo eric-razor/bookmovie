@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  act_as_voter
+  acts_as_voter
   has_many :votes
   has_many :mediums, through: :votes  #good
 
