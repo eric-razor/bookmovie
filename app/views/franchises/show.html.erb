@@ -4,33 +4,32 @@
   <!-- <li> button_to '+1', upvote_medium_path(media), method: :post  -->
 <!--  erb tags < % =  % >  don't work in HTML comments quotes-->
 <hr>
-  <% @franchise.media.each do |single_media|%>
+  <% @franchise.media.each do |medium|%>
 
   <div class="col-sm-6 col-md-4">
 
     <div class="thumbnail thumb-box">
 
-      <h2 style="text-align:center;"><%= single_media.name %></h2>
+      <h2 style="text-align:center;"><%= medium.name %></h2>
 
       <div class="caption" style="text-align:center">
-        <%= link_to like_medium_path(single_media), class: "like", method: :put do %>
+        <%= link_to like_medium_path(medium), class: "like", method: :put do %>
           <button type="button" class="btn btn-info" aria-label="Left Align">
           <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-          <span class="badge"><%= single_media.get_upvotes.size %></span>
+          <span class="badge"><%= medium.get_upvotes.size %></span>
         </button>
         <% end %>
 
-        <%= link_to like_medium_path(single_media), class: "like", method: :put do %>
+        <%= link_to like_medium_path(medium), class: "like", method: :put do %>
           <button type="button" class="btn btn-info" aria-label="Left Align">
           <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-          <span class="badge"><%= single_media.get_downvotes.size %></span>
+          <span class="badge"><%= medium.get_downvotes.size %></span>
         </button>
         <% end %>
 
       </div>
     </div>
-    <!-- <li><button class="button">Click Me</button></li> -->
+      <%= link_to medium.name, medium%></li>
 
-      <%= link_to media.name, media%></li>
     <% end %>
 </ul>
