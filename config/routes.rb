@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :users
   resources :franchises do
     resources :works do  #should be routed properly
-      post 'like' => 'works#upvote'
-      post 'unlike' => 'works#downvote'
+      put 'like' => 'works#upvote'
+      put 'unlike' => 'works#downvote'
     end
   end
 

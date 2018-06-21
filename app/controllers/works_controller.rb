@@ -20,7 +20,7 @@ class WorksController < ApplicationController
 
   private
   def set_work
-    @work = Work.find(params[:id])
+    @work = Work.find(params[:work_id])
   end
 
 

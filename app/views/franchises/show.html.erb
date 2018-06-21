@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8 offset-md-4">
 
-      <% @franchise.works&.each do |work| %>
+      <% @franchise.works.each do |work| %>
 
         <div class="well">
           <h2 style="text-align:center;"><%= work.name %></h2>
@@ -13,7 +13,7 @@
              <span class="badge"><%= work.get_upvotes.size %></span>
            </a>
           </div>
-          <%= button_to unlike_work_path(work), class: "like", method: :put do %>
+          <%= button_to franchise_work_unlike_path(@franchise, work), class: "like", method: :put do %>
   <button type="button" class="btn btn-info" aria-label="Left Align">
   <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
   <span class="badge"><%= work.get_downvotes.size %></span>
