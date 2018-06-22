@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :franchises do
-    resources :works do  #should be routed properly
+    resources :works do  #works is dependant on franchises
       put 'like' => 'works#upvote'
       put 'unlike' => 'works#downvote'
     end
