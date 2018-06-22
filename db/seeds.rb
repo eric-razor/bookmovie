@@ -8,6 +8,7 @@
 
 harrypotter = Franchise.create(name: "Harry Potter")
 thelegendofzelda = Franchise.create(name:"Legend of Zelda")
+pokemon = Franchise.create(name:"Pokemon")
 
 works1 = Work.create(name: "Harry Potter chamber of secrets", work_type: "book", director_author: "JK Rowling", snippet: "about a boy with with a wand", review: "great", rating: 5, franchise_id: 1)
 works2 = Work.create(name: "Harry Potter soccerer's stone", work_type: "book", director_author: "JK Rowling", snippet: "about a boy with with a wand", review: "great", rating: 5, franchise_id: 1)
